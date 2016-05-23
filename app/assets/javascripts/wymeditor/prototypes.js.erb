@@ -12,7 +12,7 @@ WYMeditor.editor.prototype.init = function() {
   //load subclass - browser specific
   //unsupported browsers: do nothing
 
-  if ($.browser.msie) {
+  if ($.browser.msie || ($.browser.mozilla && $.browser.version === '11.0')) {
     var WymClass = new WYMeditor.WymClassExplorer(this);
   }
   else if ($.browser.mozilla) {
